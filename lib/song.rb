@@ -59,13 +59,21 @@ class Song
   #accepts a filename in the format of "-.mp3"
   #returns name and artist_name
   # def self.new_from_filename(file) 
-  #   file = self.new
+  #   song_array = file.split(" - ")
   #   file.split("-").pop(".mp3").join(" - ")
-  #   file.save
-  #   file.name = name[0]
-  #   file.artist_name = artist_name[1]
+  #   file = self.new
+  #   file.name = name[1]
+  #   file.artist_name = artist_name[0]
   #   file
   # end
+  def self.new_from_filename(filename)
+    song_array = filename.split(" - ")
+    song_array[1] = song_array[1].chomp(".mp3")
+    song = self.new
+    song.name = song_array[1]
+    song.artist_name = song_array[0]
+    song
+  end
   
   def self.create_from_filename
     #self.sort_by {|x| x}
