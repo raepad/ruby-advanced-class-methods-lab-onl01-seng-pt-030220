@@ -62,7 +62,7 @@ class Song
   #accepts a filename in the format of "-.mp3"
   #returns name and artist_name
   def self.new_from_filename(file) 
-    file = self.new
+    file = self.create
     file.split(" - ").pop(".mp3").join(" - ")
     file.save
     file.name = name[0]
