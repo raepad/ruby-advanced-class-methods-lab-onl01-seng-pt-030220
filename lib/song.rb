@@ -60,7 +60,7 @@ class Song
   #returns name and artist_name
   def self.new_from_filename(file) 
     file = self.create
-    file.split(" - ").pop(".mp3").join(" - ")
+    file.split("-").pop(".mp3").join(" - ")
     file.save
     file.name = name[0]
     file.artist_name = artist_name[1]
