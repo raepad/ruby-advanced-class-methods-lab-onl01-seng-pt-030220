@@ -55,9 +55,7 @@ class Song
   def self.alphabetical
     self.all.sort_by{|a| a.name}
   end
-  #you will need those lines, but you should be splitting up the file name first, saving it as an array, and then setting those variables to different indices of the array
-  #accepts a filename in the format of "-.mp3"
-  #returns name and artist_name
+
   def self.new_from_filename(file) 
     song_array = file.split(" - ")
     song_array[1] = song_array[1].chomp(".mp3")
@@ -66,17 +64,15 @@ class Song
     song.artist_name = song_array[0]
     song
   end
-  # def self.new_from_filename(filename)
-  #   song_array = filename.split(" - ")
-  #   song_array[1] = song_array[1].chomp(".mp3")
-  #   song = self.new
-  #   song.name = song_array[1]
-  #   song.artist_name = song_array[0]
-  #   song
-  # end
   
-  def self.create_from_filename
-    #self.sort_by {|x| x}
+  def self.create_from_filename(file)
+    song_array = file.split(" - ")
+    song_array[1] = song_array[1].chomp(".mp3")
+    song = song.create 
+    song.name = song_array[1]
+    song.artist_name = song_array[0]
+    song.save
+    song
   end
   
   def self.destroy_all
