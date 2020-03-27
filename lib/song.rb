@@ -58,14 +58,14 @@ class Song
   #you will need those lines, but you should be splitting up the file name first, saving it as an array, and then setting those variables to different indices of the array
   #accepts a filename in the format of "-.mp3"
   #returns name and artist_name
-  def self.new_from_filename(file) 
-    file = self.new
-    file.split("-").pop(".mp3").join(" - ")
-    file.save
-    file.name = name[0]
-    file.artist_name = artist_name[1]
-    file
-  end
+  # def self.new_from_filename(file) 
+  #   file = self.new
+  #   file.split("-").pop(".mp3").join(" - ")
+  #   file.save
+  #   file.name = name[0]
+  #   file.artist_name = artist_name[1]
+  #   file
+  # end
   
   def self.create_from_filename
     #self.sort_by {|x| x}
