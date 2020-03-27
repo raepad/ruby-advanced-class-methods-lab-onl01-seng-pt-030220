@@ -63,7 +63,7 @@ class Song
     song_array[1] = song_array[1].chomp(".mp3")
     song = self.new
     song.name = name[1]
-    song.artist_name = artist_name[0]
+    song.artist_name = name[0]
     song
   end
   # def self.new_from_filename(filename)
