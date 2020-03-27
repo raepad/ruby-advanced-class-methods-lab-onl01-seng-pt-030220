@@ -34,9 +34,6 @@ class Song
     find = self.all.find {|song| song.name == name}
   end
 
-   #accepts a string name for a song and either returns a matching song instance with that name or create a new song with the name and return the song instance
-   #check to see if the string name matches a song instance.
-   #if it doesn't match then create a new song with the name and return the song instance.
   def self.find_or_create_by_name(name)
     if self.find_by_name(name)
       self.find_by_name(name)
